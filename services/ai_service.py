@@ -1,10 +1,11 @@
-
 import logging
 import os
 from openai import OpenAI
-from utils.config import OPENAI_API_KEY
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
+
 
 async def generate_infographic(input_path: str, output_path: str):
     logging.info("Sending image to OpenAI for processing")
